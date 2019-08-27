@@ -24,7 +24,7 @@
 
 ## Important notes
 
-- This responsive visual graphic map is built on top of **D3 version 5** library. First thing first, to achieve responisve chart, `SVG view box` is being used.
+- This responsive visual graphic map is built on top of **D3 version 5** library. To achieve responisve map, `SVG view box` is being used.
 
   ```
   viewBox="minx miny width height"
@@ -55,11 +55,11 @@
 
 ## Usage:
 
-- Map can be zoomed in or zoomed out using mouse wheel. Point to the selected area of the map and scroll up or down to initialize zoom behaviour. Outside the map area mouse wheel return normal scrolling behaviour.
-- Zoom in can be done by doubleClick.
-- Panning is true.
+- Treemap is zoomable. Point to the selected area of the map and left click to initialize zoom in behaviour.
+- To Zoom out click on the orange bar in the header.
 - Information can be viewed by pointing on any area of map.
-- Legend with percentage and different colors indicates degree obtained by individuals respectively to the county.
+- For test to pass, test need to run in child page that is after zooming in the intial page.
+- Dropdown menu on top right contain list of different product(s) details.
 
 ### Project Structure
 
@@ -75,7 +75,7 @@ Project
 │       └───js
 │           └───treemap.js
 |           |___colorLegend.js
-|           |____topojson.js
+|           |____Navigation.js
 |           |___index.js
 |
 │       └───scss
@@ -105,7 +105,7 @@ $ git clone https://github.com/avatarfreak/responsive-tree-map
 - clone this project
 
   - `$ git clone "https://github.com/avatarfreak/responsive-tree-map.git"`
-  - `$ cd responsive-choropleth-map`
+  - `$ cd responsive-tree-map`
   - `$ npm install`
   - `$ npm run build`
   - `$ npm run start`
