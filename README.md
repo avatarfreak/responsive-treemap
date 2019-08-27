@@ -97,15 +97,15 @@ Project
 Clone this repo:
 
 ```
-$ git clone https://github.com/avatarfreak/responsive-tree-map
+$ git clone https://github.com/avatarfreak/responsive-treemap
 ```
 
 #### Installing:
 
 - clone this project
 
-  - `$ git clone "https://github.com/avatarfreak/responsive-tree-map.git"`
-  - `$ cd responsive-tree-map`
+  - `$ git clone "https://github.com/avatarfreak/responsive-treemap.git"`
+  - `$ cd responsive-treemap`
   - `$ npm install`
   - `$ npm run build`
   - `$ npm run start`
