@@ -212,7 +212,7 @@ export const Treemap = (selection, props) => {
     //parent's  name is same as category
     let findCategory = (a, b) => (className === "children" ? a : b);
 
-    tooltip.transition().duration(200).style("opacity", 1);
+    tooltip.style("opacity", 1);
     tooltip
       .html(
         `
