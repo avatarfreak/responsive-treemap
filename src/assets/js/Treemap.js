@@ -27,7 +27,6 @@ export const Treemap = (selection, props) => {
   //invoking treemap
   const treemapLayout = treemap()
     .size([innerWidth, innerHeight])
-    .paddingInner(1)
 
   const svg = selection
     .append("g")
