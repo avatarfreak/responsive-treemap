@@ -1,7 +1,9 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow: auto;
+  overflow-x: hidden; }
 
 :root {
   --title_text: #ffebcd;
@@ -61,17 +63,19 @@ body {
     opacity: 0.5; }
   .container .textdiv {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 11px;
     padding: 7px;
     cursor: pointer;
     overflow: none; }
   .container .textdiv .title {
     font-size: 102%;
     font-weight: bold;
-    margin-top: 8px; }
+    margin-top: 8px;
+    font-size: 11px !important; }
   .container .textdiv p {
     line-height: 13px;
     margin: 0 0 4px !important;
+    font-size: 11px !important;
     padding: 0px; }
   .container address {
     text-align: center;
@@ -109,7 +113,7 @@ select {
   background: #2e7d70e8;
   background-image: none; }
 
-.display__item {
+.select {
   position: relative;
   display: flex;
   width: 16em;
@@ -127,7 +131,7 @@ select {
   cursor: pointer; }
 
 /* Arrow */
-.display__item::after {
+.select::after {
   content: "\25BC";
   position: absolute;
   top: 0;
@@ -140,7 +144,7 @@ select {
   transition: 0.25s all ease; }
 
 /* Transition */
-.display__item:hover::after {
+.select:hover::after {
   color: #f39c12; }
 
 /********************Preloader**********************/
