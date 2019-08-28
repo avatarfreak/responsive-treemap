@@ -16,7 +16,7 @@ import { Navigation } from "./Navigation";
 //Assigning margin and dimension of windows
 const width = document.querySelector(".display__svg").offsetWidth;
 const height = width / 2;
-const margin = { top: 30, bottom: 120, left: 10, right: 10 };
+const margin = { top: 30, bottom: 15, left: 10, right: 10 };
 const innerHeight = height - margin.top - margin.bottom;
 const innerWidth = width - margin.left - margin.right;
 const colorScale = scaleOrdinal().range(schemeSet3);
@@ -46,9 +46,15 @@ const onOptionClick = (option, idx) => {
 
 //Loading all the dataset
 Promise.all([
-  json("https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/video-game-sales-data.json"),
-  json("https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/movie-data.json"),
-  json("https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/kickstarter-funding-data.json")
+  json(
+    "https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/kickstarter-funding-data.json"
+  ),
+  json(
+    "https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/movie-data.json"
+  ),
+  json(
+    "https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/kickstarter-funding-data.json"
+  )
 ]).then(([video, movies, kickstarter]) => {
   //remove preloader
   select("#loading").remove();
@@ -61,11 +67,25 @@ Promise.all([
 
 function render() {
   //Invoking treemap function
-  Treemap(svg, { data, height, width, margin, innerHeight, innerWidth, colorScale });
+  Treemap(svg, {
+    data,
+    height,
+    width,
+    margin,
+    innerHeight,
+    innerWidth,
+    colorScale
+  });
 
   //Legeds
-  colorLegends(svg, { data, innerHeight, innerWidth, margin, colorScale });
+  colorLegends(select(".display__svg"), {
+    data,
+    innerHeight,
+    innerWidth,
+    margin,
+    colorScale
+  });
 
   //Drop down list
-  Navigation(select("nav>.display__item"), { options, onOptionClick, selectedOption });
+  Navigation(select("nav>.select"), { options, onOptionClick, selectedOption });
 }

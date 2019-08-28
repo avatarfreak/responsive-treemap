@@ -1,16 +1,17 @@
+import { select } from "d3";
 export const colorLegends = (selection, props) => {
-  const {data, innerHeight, margin, colorScale } = props;
-  const legendDims = { width: 20, height: 20, col: 2, padding: 160, space: 25 };
+  const { data, innerHeight, innerWidth, margin, colorScale } = props;
+  const legendDims = { width: 20, height: 20, col: 4, padding: 160, space: 25 };
 
+  
   const legend = selection
     .selectAll("#legend")
     .data([null])
-    .join("g")
+    .join("svg")
     .attr("id", "legend")
-    .attr(
-      "transform",
-      `translate(${margin.left}, ${innerHeight + margin.top + 8})`
-    );
+     .attr("viewBox", `0 0  ${innerWidth} ${innerHeight}`)
+    .attr("perserveAspectRatio", "xMinYMid")
+    .attr("transform", `translate(${margin.left}, ${0})`);
 
   legend
     .selectAll(".legend-item")
